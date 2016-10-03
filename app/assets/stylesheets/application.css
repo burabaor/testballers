@@ -25,9 +25,16 @@ body {
   margin-right: 1px;
 }
 
+.margin-none {
+  margin: 0;
+}
+
 .margin-b {
   margin-bottom: 14px;
-  float: left !important;
+}
+
+.margin-b-lg {
+  margin-bottom: 30px
 }
 
 .margin-l {
@@ -36,6 +43,23 @@ body {
 
 .width-100 {
   width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1; /* Fix for IE7 */
+  *display: inline; /* Fix for IE7 */
+}
+
+.color-white {
+  color: white;
+  margin-top: 8px;
+  margin-bottom: 8px !important;
+}
+
+.smooth {
+  -webkit-font-smoothing: antialiased;
 }
 
 #nav-unsigned:focus {

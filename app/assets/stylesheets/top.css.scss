@@ -18,13 +18,18 @@
 @viewport         { width: device-width; }
 
 
-.jumbotron-ext {
-  height: 285px;
+#jumbotron-ext {
+  height: 335px;
   @media (min-width: 992px ) {
-    height: 335px;
+    height: 360px;
   }
-  background: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTndU1KnnzQI78GuXqxn3EIIeoHWVxWti1r5Km-jGLhvtfVvQJL");
+  @media (max-width: 767px) {
+    height: 430px;
+    padding: 30px 0;
+  }
+  background: url("3693058077_38c5b8f0a9_o.jpg");
   background-size: 100% 100%;
+  background-color: rgba(0,0,0,0.6)
 }
 
 #search-ext {
@@ -104,4 +109,19 @@ body {
   @media (min-width: 768px) {
     font-size: 3em;
   }
+}
+
+#head-message {
+  color: white;
+  font-size: 2em;
+  @media (min-width: 992px) {
+    font-size: 3em;
+  }
+}
+
+.head-form {
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  -webkit-font-smoothing: antialiased;
 }
