@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+body {
+  margin-top: 50px;
+  background-color: #f1f1f1;
+}
+
+#nav-ext {
+  margin-right: 1px;
+}
+
+.margin-b {
+  margin-bottom: 14px;
+  float: left !important;
+}
+
+.margin-l {
+  margin-left: 7px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+#nav-unsigned:focus {
+  color: #ffffff;
+}
+#nav-unsigned:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#nav-unsigned {
+  color: #999;
+  background-color: rgba(34,34,34,.3);
+  border: none;
+  padding: 15px;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  float: right;
+  margin: 0;
+}
+
+
+
+/*ログインの中身*/
+#login-dp {
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(204,204,204,.6);
+}
+#help-block {
+    display: inline-block;
+    float: right;
+    margin-top: 2px;
+}
+#login-dp #help-block {
+    font-size:12px
+}
+#login-dp .bottom {
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding: 15px 15px 0 15px;
+}
+#login-dp .social-buttons {
+    margin:12px 0
+}
+#login-dp .social-buttons a {
+    width: 49%;
+}
+#login-dp .form-group  {
+    margin-bottom: 10px;
+}
+.btn-fb {
+    color: #fff !important;
+    background-color:#3b5998;
+}
+.btn-fb:hover {
+    color: #fff;
+    background-color:#496ebc
+}
+.btn-tw {
+    color: #fff !important;
+    background-color:#55acee;
+}
+.btn-tw:hover {
+    color: #fff;
+    background-color:#59b5fa;
+}
+.addition a:hover {
+  color: #428bca !important;
+}
+@media(max-width:768px) {
+    #login-dp {
+        background-color: rgba(204,204,204,0.6);
+    }
+    #login-dp .bottom {
+        background-color: inherit;
+
+    }
+}

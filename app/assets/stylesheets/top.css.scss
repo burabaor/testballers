@@ -1,0 +1,107 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*!
+ * IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*
+ * See the Getting Started docs for more information:
+ * http://getbootstrap.com/getting-started/#support-ie10-width
+ */
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
+
+.jumbotron-ext {
+  height: 285px;
+  @media (min-width: 992px ) {
+    height: 335px;
+  }
+  background: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTndU1KnnzQI78GuXqxn3EIIeoHWVxWti1r5Km-jGLhvtfVvQJL");
+  background-size: 100% 100%;
+}
+
+#search-ext {
+  background-color: rgba(256,256,256,0.7);
+}
+
+#btn-ext {
+  background-color: rgba(256,256,256,0.9);
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #222;
+  color: #FFFFFF;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+
+
+.thumbnail-ext {
+  border: none;
+}
+.caption-ext {
+  width: 284px;
+  @media (max-width: 354px ) {
+    width: auto;
+  }
+  margin: 0 auto;
+  padding: 0 !important;
+}
+.my-container {
+  margin: 0 20px;
+}
+.list-name {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  #margin-l-media {
+    margin-left: 7px;
+  }
+}
+
+#message {
+  background: url("enjin~4.jpeg");
+  background-size: 100% 100%;
+  height: 400px;
+  @media (max-width: 767px) {
+    height: 300px;
+    padding-left: 0;
+  }
+  /*opacity: 0.9;*/
+}
+
+#message-text {
+  color: white;
+  font-size: 1.7em;
+  @media (min-width: 768px) {
+    font-size: 3em;
+  }
+}
