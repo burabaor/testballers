@@ -14,8 +14,10 @@
           <div class="col-md-12">
             Login with
             <div class="social-buttons">
-              <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-              <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+              <!-- <i class="fa fa-facebook"> -->
+              <%= link_to " Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-fb" %>
+              <!-- <i class="fa fa-twitter"> -->
+              <%= link_to " Twitter", user_twitter_omniauth_authorize_path, class: "btn btn-tw" %>
             </div>
             <p class="text-center">------- or --------</p>
 
@@ -92,8 +94,8 @@
 
       <!-- SNS新規登録 -->
       <p class="color-white">　or</p>
-        <a href="#" class="btn btn-fb smooth"><i class="fa fa-facebook text-center"></i> Facebookで登録</a>
-        <a href="#" class="btn btn-tw smooth"><i class="fa fa-twitter"></i> Twitterで登録</a>
+        <%= link_to " Facebookで登録", user_facebook_omniauth_authorize_path, class: "btn btn-fb smooth" %>
+        <%= link_to " Twitterで登録", user_twitter_omniauth_authorize_path, class: "btn btn-tw smooth" %>
       </div>
     </div>
 

@@ -53,6 +53,8 @@ gem 'rmagick'
 gem 'devise'
 gem 'pry-rails'
 gem 'enum_help'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 group :production, :staging do
   gem 'rails_12factor'
 end
