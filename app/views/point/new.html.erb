@@ -1,0 +1,48 @@
+<div class="bgc-white">
+  <div class="container smooth">
+    <h3 class="margin-b">フトセミポイントのチャージ</h3>
+    <div class="panel panel-body bgc-default">
+      保有ポイント： <%= current_user.point %> pt
+    </div>
+
+    <!-- ポイント数 -->
+    <h4>ポイント数</h4>
+    <div class="panel panel-body bgc-default">
+      <div class="btn-group btn-group-justified" role="group" id="parent-width">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default btn-width btn-lg">500pt</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default btn-width btn-lg">1,000pt</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default btn-width btn-lg">2,000pt</button>
+        </div>
+      </div>
+      <div class="btn-group btn-group-justified" role="group" id="parent-width-2">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default btn-width btn-lg">3,000pt</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default btn-width btn-lg">5,000pt</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default btn-width btn-lg">10,000pt</button>
+        </div>
+      </div>
+      <div id="margin-b-font-size">or</div>
+      <div class="input-group width-100">
+        <input type="number" class="form-control" id="width-40" min="500" max="50000" placeholder="自分で選ぶ">
+      </div>
+    </div>
+
+    <!-- 支払い方法 -->
+    <h4>支払い方法</h4>
+    <div class="panel panel-body bgc-default">
+      <%= form_tag(action: :pay, method: :post) do %>
+        <script src="https://checkout.webpay.jp/v3/" class="webpay-button" data-key="test_public_6aC0rngNvb6S9lgdVM9ml29I" data-lang="ja"></script>
+      <% end %>
+    </div>
+
+  </div>
+</div>

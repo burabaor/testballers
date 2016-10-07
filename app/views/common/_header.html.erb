@@ -16,6 +16,7 @@
     </div>
     <div class="collapse navbar-collapse pull-right">
       <ul class="nav navbar-nav">
+        <li><%= link_to 'ポイント', new_point_path %></li>
         <li><%= link_to 'ユーザー設定', edit_user_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       </ul>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:index]
+  resources :point, only: [:new]
+  post 'point/pay' => 'point#pay'
   root 'top#index'
 
 end

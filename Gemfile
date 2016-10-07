@@ -55,6 +55,7 @@ gem 'pry-rails'
 gem 'enum_help'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'webpay'
 group :production, :staging do
   gem 'rails_12factor'
 end

@@ -21,6 +21,10 @@ body {
   background-color: #f1f1f1;
 }
 
+.bgc-white {
+  background-color: white;
+}
+
 #nav-ext {
   margin-right: 1px;
 }

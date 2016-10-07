@@ -1,0 +1,40 @@
+// Place all the styles related to the point controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#parent-width {
+  width: 101%;
+}
+#parent-width button{
+  padding: 6px;
+  background-color: white;
+}
+
+#parent-width-2 {
+  width: 101%;
+  margin: 5px 0;
+}
+#parent-width-2 button{
+  padding: 6px;
+  background-color: white;
+}
+
+#width-40 {
+  width: 40%;
+  @media (max-width: 338px) {
+    width: 100%;
+  }
+}
+
+#margin-b-font-size {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.bgc-default {
+  background-color: #f1f1f1;
+}
+
+.btn-width {
+  width: 98% !important;
+}
