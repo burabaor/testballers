@@ -56,6 +56,7 @@ gem 'enum_help'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'webpay'
+gem 'jquery-turbolinks'
 group :production, :staging do
   gem 'rails_12factor'
 end

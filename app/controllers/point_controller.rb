@@ -6,11 +6,12 @@ class PointController < ApplicationController
   def pay
     require 'webpay'
     webpay = WebPay.new('test_secret_fn3fZegzJ8gZerRfEebyP9Ak')
+    customer = webpay.customer.create(card: params['webpay-token'])
     webpay.charge.create(
       amount: 400,
       currency: "jpy",
-      card: params['webpay-token']
-  )
+      customer: customer.id
+    )
     redirect_to :back, notice: '支払いが完了しました'
   end
 

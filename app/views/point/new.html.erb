@@ -1,12 +1,30 @@
 <div class="bgc-white">
   <div class="container smooth">
-    <h3 class="margin-b">フトセミポイントのチャージ</h3>
+    <h3 class="margin-b">
+      フトセミポイントのチャージ<br>
+      <small>
+        <a id="dropdownMenu1" data-toggle="collapse" data-target="#collapse-target">
+          フトセミポイントとは
+          <span class="caret"></span>
+        </a>
+      </small>
+    </h3>
+      <div  id="collapse-target" class="collapse panel panel-body bgc-default">
+        <p>
+        フトセミポイントは、フトセミ内での動画購入に使うことのできるポイントです。<br>
+        ポイントに有効期限はありません。
+        </p>
+        <div class="panel panel-body margin-none text-center">
+          <span class="lead">1ポイント1円としてお使いいただけます</span>
+        </div>
+      </div>
+
     <div class="panel panel-body bgc-default">
       保有ポイント： <%= current_user.point %> pt
     </div>
 
     <!-- ポイント数 -->
-    <h4>ポイント数</h4>
+    <h4>①ポイント数を決める</h4>
     <div class="panel panel-body bgc-default">
       <div class="btn-group btn-group-justified" role="group" id="parent-width">
         <div class="btn-group" role="group">
@@ -36,13 +54,10 @@
       </div>
     </div>
 
+
     <!-- 支払い方法 -->
-    <h4>支払い方法</h4>
-    <div class="panel panel-body bgc-default">
-      <%= form_tag(action: :pay, method: :post) do %>
-        <script src="https://checkout.webpay.jp/v3/" class="webpay-button" data-key="test_public_6aC0rngNvb6S9lgdVM9ml29I" data-lang="ja"></script>
-      <% end %>
-    </div>
+    <h4>②支払い方法を決める</h4>
+    <%= render partial: "common/payment"  %>
 
   </div>
 </div>
