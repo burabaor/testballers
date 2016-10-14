@@ -1,6 +1,12 @@
 class PointController < ApplicationController
 
   def new
+    @point = current_user.point
+  end
+  def bank
+    
+  end
+  def card
     
   end
   def pay

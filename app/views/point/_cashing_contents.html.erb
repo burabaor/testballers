@@ -1,32 +1,18 @@
-<div class="panel panel-body bgc-default">
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading bgc-white" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-controls="collapseOne">
-            クレジットカード<small>（おすすめ）</small>
-          </a>
-        </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-          <%= form_tag('/point/pay', method: :post, id:"card-pay-form") do %>
-            <script src="https://checkout.webpay.jp/v3/" class="webpay-button" data-key="test_public_6aC0rngNvb6S9lgdVM9ml29I" data-lang="ja" data-partial="true"></script>
-            <input type="hidden" name="other" value="他の情報" />
-            <%= submit_tag "ポイント購入", class:"btn btn-primary", confirm:"ポイントを確定する" %>
-          <% end %>
-        </div>
+
+    <!-- ポイント数 -->
+    <h4>①ポイント数を決める</h4>
+    <div class="panel panel-body bgc-default">
+      <div class="input-group width-100">
+        <input type="number" class="form-control pt-select" id="width-40" min="301" max="<%= @point %>" placeholder="金額を選択">
+        <div class="clear">&nbsp;</div>
+        <p class="help-block">301〜<%= @point %>ptまで</p>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading bgc-white" role="tab" id="headingTwo">
-        <h4 class="panel-title">
-          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          銀行振込
-          </a>
-        </h4>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+
+
+    <!-- 支払い方法 -->
+    <h4>②振込先を決める</h4>
+    <div class="panel panel-default bgc-default">
         <div class="panel-body">
           <%= form_tag('/trades', method: :post, class:"col-sm-7 padding-none" ) do %>
           <div class="panel panel-default">
@@ -68,7 +54,3 @@
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<!-- <div class="clear">&nbsp;</div> -->

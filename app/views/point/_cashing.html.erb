@@ -1,0 +1,42 @@
+<div class="bgc-white padding-t-l">
+  <div class="container smooth">
+    <h3 class="margin-b">
+      ポイントの換金・チャージ<br>
+      <small>
+        <a id="dropdownMenu1" data-toggle="collapse" href="#collapse-target">
+          フトセミポイントとは<span class="caret"></span>
+        </a>
+      </small>
+    </h3>
+      <div  id="collapse-target" class="collapse panel panel-body bgc-default">
+        <p>
+        フトセミポイントは、フトセミ内での動画購入に使うことのできるポイントです。<br>
+        ポイントに有効期限はありません。
+        </p>
+        <div class="panel panel-body margin-none text-center">
+          <span class="lead">1ポイント1円としてお使いいただけます</span>
+        </div>
+      </div>
+    <div class="panel panel-body bgc-default">
+      保有ポイント： <%= @point %> pt
+    </div>
+
+
+
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs margin-b" role="tablist">
+    <li role="presentation" class="active width-50"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><h4>換金する</h4></a></li>
+    <li role="presentation" class="width-50"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h4>チャージする</h4></a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="home"><%= render partial: "cashing_contents" %></div>
+    <div role="tabpanel" class="tab-pane fade" id="profile"><%= render partial: "charge" %></div>
+  </div>
+
+</div>
+
+

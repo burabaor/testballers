@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004023721) do
+ActiveRecord::Schema.define(version: 20161009084010) do
 
   create_table "direct_messages", force: :cascade do |t|
     t.integer  "user_id",          limit: 4,     null: false
@@ -29,6 +29,20 @@ ActiveRecord::Schema.define(version: 20161004023721) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "payment_accounts", force: :cascade do |t|
+    t.integer  "user_id",        limit: 4,   null: false
+    t.string   "bank_name",      limit: 255
+    t.integer  "branch_num",     limit: 4
+    t.integer  "account_num",    limit: 4
+    t.string   "account_type",   limit: 255
+    t.string   "account_holder", limit: 255
+    t.string   "customer_id",    limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "payment_accounts", ["user_id"], name: "index_payment_accounts_on_user_id", using: :btree
 
   create_table "purchases", force: :cascade do |t|
     t.integer  "user_id",    limit: 4, null: false

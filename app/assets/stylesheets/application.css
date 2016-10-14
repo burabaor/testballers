@@ -22,7 +22,7 @@ body {
 }
 
 .bgc-white {
-  background-color: white;
+  background-color: white !important;
 }
 
 #nav-ext {
@@ -31,6 +31,14 @@ body {
 
 .margin-none {
   margin: 0;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-t-l {
+  padding-top: 30px;
 }
 
 .margin-b {
@@ -56,15 +64,24 @@ body {
   *display: inline; /* Fix for IE7 */
 }
 
+.smooth {
+  -webkit-font-smoothing: antialiased;
+}
+
+.clear {
+  clear:both;
+  height:0;
+  font-size:1px;
+  line-height:0;
+  visibility:hidden;
+}
+
 .color-white {
   color: white;
   margin-top: 8px;
   margin-bottom: 8px !important;
 }
 
-.smooth {
-  -webkit-font-smoothing: antialiased;
-}
 
 #nav-unsigned:focus {
   color: #ffffff;
