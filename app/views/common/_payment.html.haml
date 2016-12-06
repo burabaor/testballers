@@ -1,0 +1,47 @@
+.panel.panel-body.bgc-default
+  #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+    .panel.panel-default
+      #headingOne.panel-heading.bgc-white{:role => "tab"}
+        %h4.panel-title
+          %a{"aria-controls" => "collapseOne", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne", :role => "button"}
+            クレジットカード
+            %small （おすすめ）
+      #collapseOne.panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel"}
+        .panel-body
+          = form_tag('/point/pay', method: :post, id:"card-pay-form") do
+            %script.webpay-button{"data-key" => "test_public_6aC0rngNvb6S9lgdVM9ml29I", "data-lang" => "ja", "data-partial" => "true", :src => "https://checkout.webpay.jp/v3/"}
+            %input{:name => "other", :type => "hidden", :value => "他の情報"}/
+            = submit_tag "ポイント購入", class:"btn btn-primary", confirm:"ポイントを確定する"
+    .panel.panel-default
+      #headingTwo.panel-heading.bgc-white{:role => "tab"}
+        %h4.panel-title
+          %a.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo", :role => "button"}
+            銀行振込
+      #collapseTwo.panel-collapse.collapse{"aria-labelledby" => "headingTwo", :role => "tabpanel"}
+        .panel-body
+          = form_tag('/trades', method: :post, class:"col-sm-7 padding-none" ) do
+            .panel.panel-default
+              .panel-body.form-horizontal.payment-form
+                .form-group
+                  %label.col-sm-3.control-label{:for => "payment_account_bank_name"} 銀行名
+                  .col-sm-9
+                    = text_field :payment_account, :bank_name, class:"form-control"
+                .form-group
+                  %label.col-sm-3.control-label{:for => "payment_account_branch_num"} 店番
+                  .col-sm-5
+                    = number_field :payment_account, :branch_num, class:"form-control", in: 0..1000
+                .form-group
+                  %label.col-sm-3.control-label{:for => "payment_account_account_type"} 口座種別
+                  .col-sm-5
+                    = select_tag 'payment_account[account_type]', options_for_select([["普通預金", "savings"], ["当座預金", "checking"], ["定期預金", "time-deposit"], ["その他", "others"]]), class:"form-control"
+                .form-group
+                  %label.col-sm-3.control-label{:for => "payment_account_account_num"} 口座番号
+                  .col-sm-5
+                    = number_field :payment_account, :account_num, class:"form-control", in: 10000..100000000
+                .form-group
+                  %label.col-sm-3.control-label{:for => "payment_account_account_holder"} 口座名義
+                  .col-sm-9
+                    = text_field :payment_account, :account_holder, class:"form-control", placeholder: "カタカナ"
+                = hidden_field_tag(:sum, "数字")
+                = submit_tag "口座登録", class:"btn btn-default"
+/ <div class="clear">&nbsp;</div>

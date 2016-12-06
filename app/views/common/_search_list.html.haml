@@ -1,0 +1,38 @@
+/ search list
+.container.padding-t-l
+  .input-group.col-xs-12.col-sm-5.margin-b.pull-left
+    .input-group-btn
+      %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+        すべて
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"} Action
+        %li
+          %a{:href => "#"} Another action
+        %li
+          %a{:href => "#"} Something else here
+        %li.divider{:role => "separator"}
+        %li
+          %a{:href => "#"} Separated link
+    %input.form-control{:placeholder => "キーワード", :type => "text"}/
+    %span.input-group-btn
+      %button.btn.btn-default{:type => "button"}
+        %span.glyphicon.glyphicon-search{"aria-hidden" => "true"}
+  / カテゴリーから
+  #margin-l-media.dropdown.margin-b.pull-left
+    %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+      カテゴリーから探す
+      %span.caret
+    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+      %li
+        %a{:href => "#"} Action
+      %li
+        %a{:href => "#"} Another action
+      %li
+        %a{:href => "#"} Something else here
+      %li.divider{:role => "separator"}
+      %li
+        %a{:href => "#"} Separated link
+  .margin-b.margin-l.pull-left
+    %button.btn.btn-default{:onclick => "location.href='#'", :type => "button"} 詳細検索...

@@ -1,0 +1,31 @@
+.bgc-white.padding-t-l
+  .container.smooth
+    %h3.margin-b
+      ポイントの換金・チャージ
+      %br/
+      %small
+        %a#dropdownMenu1{"data-toggle" => "collapse", :href => "#collapse-target"}
+          フトセミポイントとは
+          %span.caret
+    #collapse-target.collapse.panel.panel-body.bgc-default
+      %p
+        フトセミポイントは、フトセミ内での動画購入に使うことのできるポイントです。
+        %br/
+        ポイントに有効期限はありません。
+      .panel.panel-body.margin-none.text-center
+        %span.lead 1ポイント1円としてお使いいただけます
+    .panel.panel-body.bgc-default
+      保有ポイント： #{@point} pt
+    %div
+      / Nav tabs
+      %ul.nav.nav-tabs.margin-b{:role => "tablist"}
+        %li.active.width-50{:role => "presentation"}
+          %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#home", :role => "tab"}
+            %h4 換金する
+        %li.width-50{:role => "presentation"}
+          %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"}
+            %h4 チャージする
+      / Tab panes
+      .tab-content
+        #home.tab-pane.fade.in.active{:role => "tabpanel"}= render partial: "cashing_contents"
+        #profile.tab-pane.fade{:role => "tabpanel"}= render partial: "charge"

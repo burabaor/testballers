@@ -57,6 +57,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'webpay'
 gem 'jquery-turbolinks'
+gem "haml-rails", "~> 0.9"
 group :production, :staging do
   gem 'rails_12factor'
 end

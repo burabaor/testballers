@@ -1,0 +1,17 @@
+/ navbar  reference.. http://9-bb.com/tag/bootstrap%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6web%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86%E3%81%9C/
+%nav#nav-ext.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-header
+    / ブランド名 ロゴ名の表示
+    = link_to 'footballers', users_path, class: "navbar-brand"
+    / トグルボタンの設置
+    %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+  .collapse.navbar-collapse.pull-right
+    %ul.nav.navbar-nav
+      %li= link_to '動画投稿', new_video_path
+      %li= link_to 'ポイント', new_point_path, data: { no_turbolink: true }
+      %li= link_to 'ユーザー設定', edit_user_registration_path
+      %li= link_to 'ログアウト', destroy_user_session_path, method: :delete

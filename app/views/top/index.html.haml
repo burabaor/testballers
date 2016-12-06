@@ -1,0 +1,85 @@
+/ ログインのmodal
+#login-dp.modal{:tabindex => "-1"}
+  .modal-dialog
+    / modalの中身
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title ログイン
+      .modal-body
+        .row
+          .col-md-12
+            Login with
+            .social-buttons
+              / <i class="fa fa-facebook">
+              = link_to " Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-fb"
+              / <i class="fa fa-twitter">
+              = link_to " Twitter", user_twitter_omniauth_authorize_path, class: "btn btn-tw"
+            %p.text-center ------- or --------
+            = form_for(resource, as: resource_name, url: session_path(resource_name), html: {id:'login-nav'}) do |f|
+              .form-group
+                %label.sr-only{:for => "exampleInputEmail2"} メールアドレス
+                = f.email_field :email, class:"form-control", id:"exampleInputEmail2", placeholder:"メールアドレス", required: true ,autofocus: true
+              .form-group
+                %label.sr-only{:for => "exampleInputPassword2"} Password
+                = f.password_field :password, class:"form-control", id:"exampleInputPassword2", placeholder:"パスワード", required: true ,autofocus: true, autocomplete: "off"
+                %span#help-block.text-right.addition
+                  = link_to "パスワードを忘れた", edit_user_password_path
+                - if devise_mapping.rememberable?
+                  = f.check_box :remember_me
+                  = f.label :remember_me
+              .form-group
+                = f.submit "ログイン",class:"btn btn-primary btn-block"
+          .bottom.text-center.addition
+            = link_to "新規登録", new_user_registration_path
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} 閉じる
+/ modalここまで
+/ head-jumbotron
+#jumbotron-ext.jumbotron
+  .container
+    #head-message.margin-b-lg
+      Let's learn
+      %br/
+      with high quality seminar
+    / 新規登録
+    .row.margin-none
+      / 直接新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:'form-inline'}) do |f|
+        = devise_error_messages!
+        .form-group
+          %label.sr-only{:for => "exampleInputName3"} 名前
+          = f.text_field :name, class:"form-control head-form", placeholder:"名前", autofocus: true
+        .form-group
+          %label.sr-only{:for => "exampleInputEmail3"} メールアドレス
+          = f.email_field :email, class:"form-control head-form", placeholder:"メールアドレス", autofocus: true
+        .form-group
+          %label.sr-only{:for => "exampleInputPassword3"} パスワード
+          = f.password_field :password,class:"form-control head-form", placeholder:"パスワード(6文字以上)", autocomplete: "off"
+        .form-group
+          %label.sr-only パスワード確認
+          = f.password_field :password_confirmation, class:"form-control head-form", placeholder:"パスワード確認", autocomplete: "off"
+        = f.submit "Sign up", class:"btn btn-primary smooth"
+      / SNS新規登録
+      %p.color-white 　or
+      = link_to " Facebookで登録", user_facebook_omniauth_authorize_path, class: "btn btn-fb smooth"
+      = link_to " Twitterで登録", user_twitter_omniauth_authorize_path, class: "btn btn-tw smooth"
+/ search list
+= render partial: "common/search_list"
+/ video list
+= render partial: "common/popular_videos"
+/ message-jumbotron
+#message.jumbotron
+  .container
+    %p#message-text
+      あなたの少しの成長が
+      %br/
+      日本サッカーを強くする。
+      %br/
+      W杯で優勝する日本代表へ
+      %br/
+/ footer
+%footer.footer
+  .container
+    %p.text-muted footer content here.
