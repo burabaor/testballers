@@ -4,7 +4,7 @@
       フトセミポイントのチャージ
       %br/
       %small
-        %a#dropdownMenu1{"data-toggle" => "collapse", :href => "#collapse-target"}
+        %a#dropdownMenu1{"data-toggle": "collapse", href: "#collapse-target"}
           フトセミポイントとは
           %span.caret
     #collapse-target.collapse.panel.panel-body.bgc-default
@@ -16,28 +16,29 @@
         %span.lead 1ポイント1円としてお使いいただけます
     .panel.panel-body.bgc-default
       保有ポイント： #{current_user.point} pt
+
     / ポイント数
     %h4 ①ポイント数を決める
     .panel.panel-body.bgc-default
-      #parent-width.btn-group.btn-group-justified{:role => "group"}
-        .btn-group{:role => "group"}
-          %button.btn.btn-default.btn-width.btn-lg.pt-select{:type => "button"} 500pt
-        .btn-group{:role => "group"}
-          %button.btn.btn-default.btn-width.btn-lg.pt-select{:type => "button"} 1,000pt
-        .btn-group{:role => "group"}
-          %button.btn.btn-default.btn-width.btn-lg.pt-select{:type => "button"} 2,000pt
-      #parent-width-2.btn-group.btn-group-justified{:role => "group"}
-        .btn-group{:role => "group"}
-          %button.btn.btn-default.btn-width.btn-lg.pt-select{:type => "button"} 3,000pt
-        .btn-group{:role => "group"}
-          %button.btn.btn-default.btn-width.btn-lg.pt-select{:type => "button"} 5,000pt
-        .btn-group{:role => "group"}
-          %button.btn.btn-default.btn-width.btn-lg.pt-select{:type => "button"} 10,000pt
+      #parent-width.btn-group.btn-group-justified{role: "group"}
+        .btn-group{role: "group"}
+          %button.btn.btn-default.btn-width.btn-lg.pt-select{type: "button"} 500pt
+        .btn-group{role: "group"}
+          %button.btn.btn-default.btn-width.btn-lg.pt-select{type: "button"} 1,000pt
+        .btn-group{role: "group"}
+          %button.btn.btn-default.btn-width.btn-lg.pt-select{type: "button"} 2,000pt
+      #parent-width-2.btn-group.btn-group-justified{role: "group"}
+        .btn-group{role: "group"}
+          %button.btn.btn-default.btn-width.btn-lg.pt-select{type: "button"} 3,000pt
+        .btn-group{role: "group"}
+          %button.btn.btn-default.btn-width.btn-lg.pt-select{type: "button"} 5,000pt
+        .btn-group{role: "group"}
+          %button.btn.btn-default.btn-width.btn-lg.pt-select{type: "button"} 10,000pt
       #margin-b-font-size or
       .input-group.width-100
-        %input#width-40.form-control.pt-select{:max => "50000", :min => "500", :placeholder => "自分で選ぶ", :type => "number"}/
+        %input#width-40.form-control.pt-select{max: "50000", min: "500", placeholder: "自分で選ぶ", type: "number"}/
         .clear  
         %p.help-block 500〜50,000ptまで
     / 支払い方法
     %h4 ②支払い方法を決める
-    = render partial: "common/payment"
+    = render partial "common/payment"
