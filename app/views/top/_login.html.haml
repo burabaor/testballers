@@ -1,0 +1,36 @@
+#login-dp.modal{tabindex: "-1"}
+  .modal-dialog
+    / modalの中身
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss": "modal", type: "button"}
+          %span{"aria-hidden": "true"} ×
+        %h4.modal-title ログイン
+      .modal-body
+        .row
+          .col-md-12
+            Login with
+            .social-buttons
+              / <i class="fa fa-facebook">
+              = link_to " Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-fb"
+              / <i class="fa fa-twitter">
+              = link_to " Twitter", user_twitter_omniauth_authorize_path, class: "btn btn-tw"
+            %p.text-center ------- or --------
+            = form_for(resource, as: resource_name, url: session_path(resource_name), html: {id:'login-nav'}) do |f|
+              .form-group
+                %label.sr-only{for: "exampleInputEmail2"} メールアドレス
+                = f.email_field :email, class:"form-control", id:"exampleInputEmail2", placeholder:"メールアドレス", required: true ,autofocus: true
+              .form-group
+                %label.sr-only{for: "exampleInputPassword2"} Password
+                = f.password_field :password, class:"form-control", id:"exampleInputPassword2", placeholder:"パスワード", required: true ,autofocus: true, autocomplete: "off"
+                %span#help-block.text-right.addition
+                  = link_to "パスワードを忘れた", edit_user_password_path
+                - if devise_mapping.rememberable?
+                  = f.check_box :remember_me
+                  = f.label :remember_me
+              .form-group
+                = f.submit "ログイン",class:"btn btn-primary btn-block"
+          .bottom.text-center.addition
+            = link_to "新規登録", new_user_registration_path
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss": "modal", type: "button"} 閉じる
