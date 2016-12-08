@@ -2,36 +2,37 @@
 %h4 ①ポイント数を決める
 .panel.panel-body.bgc-default
   .input-group.width-100
-    %input#width-40.form-control.pt-select{:max => "#{@point}", :min => "301", :placeholder => "金額を選択", :type => "number"}/
+    %input#width-40.form-control.pt-select{ max: "#{ @point }", min: "301", placeholder: "金額を選択", type: "number" }
     .clear  
     %p.help-block
-      301〜#{@point}ptまで
+      301〜#{ @point }ptまで
+
 / 支払い方法
 %h4 ②振込先を決める
 .panel.panel-default.bgc-default
   .panel-body
-    = form_tag('/trades', method: :post, class:"col-sm-7 padding-none" ) do
+    = form_tag( '/trades', method: :post, class:"col-sm-7 padding-none" ) do
       .panel.panel-default
         .panel-body.form-horizontal.payment-form
           .form-group
-            %label.col-sm-3.control-label{:for => "payment_account_bank_name"} 銀行名
+            %label.col-sm-3.control-label{ for: "payment_account_bank_name" } 銀行名
             .col-sm-9
               = text_field :payment_account, :bank_name, class:"form-control"
           .form-group
-            %label.col-sm-3.control-label{:for => "payment_account_branch_num"} 店番
+            %label.col-sm-3.control-label{ for: "payment_account_branch_num" } 店番
             .col-sm-5
               = number_field :payment_account, :branch_num, class:"form-control", in: 0..1000
           .form-group
-            %label.col-sm-3.control-label{:for => "payment_account_account_type"} 口座種別
+            %label.col-sm-3.control-label{ for: "payment_account_account_type" } 口座種別
             .col-sm-5
               = select_tag 'payment_account[account_type]', options_for_select([["普通預金", "savings"], ["当座預金", "checking"], ["定期預金", "time-deposit"], ["その他", "others"]]), class:"form-control"
           .form-group
-            %label.col-sm-3.control-label{:for => "payment_account_account_num"} 口座番号
+            %label.col-sm-3.control-label{ for: "payment_account_account_num" } 口座番号
             .col-sm-5
               = number_field :payment_account, :account_num, class:"form-control", in: 10000..100000000
           .form-group
-            %label.col-sm-3.control-label{:for => "payment_account_account_holder"} 口座名義
+            %label.col-sm-3.control-label{ for: "payment_account_account_holder" } 口座名義
             .col-sm-9
               = text_field :payment_account, :account_holder, class:"form-control", placeholder: "カタカナ"
-          = hidden_field_tag(:sum, "数字")
+          = hidden_field_tag( :sum, "数字" )
           = submit_tag "口座登録", class:"btn btn-default"

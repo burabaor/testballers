@@ -6,7 +6,7 @@
   .container
     #head-message.margin-b-lg
       Let's learn
-      %br/
+      %br
       with high quality seminar
     / 新規登録
     .row.margin-none
@@ -21,15 +21,15 @@
           = f.email_field :email, class:"form-control head-form", placeholder:"メールアドレス", autofocus: true
         .form-group
           %label.sr-only{for: "exampleInputPassword3"} パスワード
-          = f.password_field :password,class:"form-control head-form", placeholder:"パスワード(6文字以上)", autocomplete: "off"
+          = f.password_field :password, class:"form-control head-form", placeholder:"パスワード(6文字以上)", autocomplete: "off"
         .form-group
           %label.sr-only パスワード確認
           = f.password_field :password_confirmation, class:"form-control head-form", placeholder: "パスワード確認", autocomplete: "off"
         = f.submit "Sign up", class:"btn btn-primary smooth"
       / SNS新規登録
-      %p.color-white 　or
-      = link_to " Facebookで登録", user_facebook_omniauth_authorize_path, class: "btn btn-fb smooth"
-      = link_to " Twitterで登録", user_twitter_omniauth_authorize_path, class: "btn btn-tw smooth"
+      %p.color-white &emsp;or
+      = link_to "Facebookで登録", user_facebook_omniauth_authorize_path, class: "btn btn-fb smooth"
+      = link_to "Twitterで登録", user_twitter_omniauth_authorize_path, class: "btn btn-tw smooth"
 
 / search list
 = render partial: "common/search_list"
@@ -41,8 +41,8 @@
   .container
     %p#message-text
       あなたの少しの成長が
-      %br/
+      %br
       日本サッカーを強くする。
-      %br/
+      %br
       W杯で優勝する日本代表へ
-      %br/
+      %br
