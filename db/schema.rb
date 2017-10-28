@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009084010) do
+ActiveRecord::Schema.define(version: 20171004035502) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "direct_messages", force: :cascade do |t|
     t.integer  "user_id",          limit: 4,     null: false
@@ -29,20 +35,6 @@ ActiveRecord::Schema.define(version: 20161009084010) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
-
-  create_table "payment_accounts", force: :cascade do |t|
-    t.integer  "user_id",        limit: 4,   null: false
-    t.string   "bank_name",      limit: 255
-    t.integer  "branch_num",     limit: 4
-    t.integer  "account_num",    limit: 4
-    t.string   "account_type",   limit: 255
-    t.string   "account_holder", limit: 255
-    t.string   "customer_id",    limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  add_index "payment_accounts", ["user_id"], name: "index_payment_accounts_on_user_id", using: :btree
 
   create_table "purchases", force: :cascade do |t|
     t.integer  "user_id",    limit: 4, null: false
@@ -79,9 +71,7 @@ ActiveRecord::Schema.define(version: 20161009084010) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                   limit: 255,              null: false
     t.string   "email",                  limit: 255, default: "", null: false
-    t.integer  "point",                  limit: 4,   default: 0,  null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
@@ -93,6 +83,8 @@ ActiveRecord::Schema.define(version: 20161009084010) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "name",                   limit: 255,              null: false
+    t.integer  "point",                  limit: 4,   default: 0,  null: false
     t.string   "uid",                    limit: 255
     t.string   "provider",               limit: 255
   end
@@ -100,15 +92,31 @@ ActiveRecord::Schema.define(version: 20161009084010) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "video_categories", force: :cascade do |t|
+    t.integer  "video_id",    limit: 4
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "video_categories", ["category_id"], name: "fk_rails_afa6fb1e5b", using: :btree
+  add_index "video_categories", ["video_id"], name: "fk_rails_6c7e71cde7", using: :btree
+
   create_table "videos", force: :cascade do |t|
     t.integer  "user_id",        limit: 4,                 null: false
+    t.string   "image",          limit: 255
     t.string   "file",           limit: 255,               null: false
     t.string   "title",          limit: 255,               null: false
     t.text     "description",    limit: 65535
-    t.integer  "purchase_count", limit: 4,     default: 0, null: false
     t.string   "passcoad",       limit: 255
+    t.integer  "purchase_count", limit: 4,     default: 0, null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
   end
 
+  add_index "videos", ["user_id"], name: "fk_rails_ba925d1105", using: :btree
+
+  add_foreign_key "video_categories", "categories"
+  add_foreign_key "video_categories", "videos"
+  add_foreign_key "videos", "users"
 end

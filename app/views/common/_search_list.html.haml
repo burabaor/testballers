@@ -6,19 +6,13 @@
         すべて
         %span.caret
       %ul.dropdown-menu
-        %li
-          %a{ href: "#" } Action
-        %li
-          %a{ href: "#" } Another action
-        %li
-          %a{ href: "#" } Something else here
-        %li.divider{ role: "separator" }
-        %li
-          %a{ href: "#" } Separated link
+        - categories.each do |category|
+          %li
+            %a{ href: "#" } #{ category.name }
     %input.form-control{ placeholder: "キーワード", type: "text" }/
     %span.input-group-btn
       %button.btn.btn-default{ type: "button" }
-        %span.glyphicon.glyphicon-search{ "aria-hidden": "true" }
+        = fa_icon "search"
 
   / カテゴリーから
   #margin-l-media.dropdown.margin-b.pull-left
@@ -26,15 +20,10 @@
       カテゴリーから探す
       %span.caret
     %ul.dropdown-menu{ "aria-labelledby": "dropdownMenu1" }
-      %li
-        %a{ href: "#" } Action
-      %li
-        %a{ href: "#" } Another action
-      %li
-        %a{ href: "#" } Something else here
-      %li.divider{ role: "separator" }
-      %li
-        %a{ href: "#" } Separated link
+      - categories.each do |category|
+        %li.divider{ role: "separator" }
+        %li
+          %a{ href: "#" } #{ category.name }
 
   / 詳細検索
   .margin-b.margin-l.pull-left

@@ -1,0 +1,26 @@
+.container-fluid.screen-wrapper
+  .row
+    .video.col-xs-12.col-md-9.smooth
+      .video__player
+        = video_tag(@video.file, controls: true)
+      .video__note
+        .video__note__info
+          %h3 #{ @video.title }
+          %caption.text-muted #{ @video.user.name }
+        .video__note__add-comment
+          %h4 質問・コメントをする
+          %textarea.form-control{ rows: 5 }
+          %button.btn.btn-primary 投稿する
+    .comment-list.col-xs-12.col-md-3
+      .comment.panel.panel-default
+        .panel-body
+          .comment__text コメントコメントコメント
+          %small.smooth.comment__name 須田雄之 / 2017-10-06
+      .comment.panel.panel-default
+        .panel-body
+          .comment__text 質問質問質問
+          %small.smooth.comment__name 須田雄之 / 2017-10-06
+      .comment.panel.panel-default
+        .panel-body
+          .comment__text 本当にこれでサッカーが上手くなりますか？
+          %small.smooth.comment__name 須田雄之 / 2017-10-06

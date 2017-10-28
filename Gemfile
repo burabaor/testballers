@@ -45,6 +45,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
@@ -58,6 +62,7 @@ gem 'omniauth-twitter'
 gem 'webpay'
 gem 'jquery-turbolinks'
 gem "haml-rails", "~> 0.9"
+gem "font-awesome-rails"
 group :production, :staging do
   gem 'rails_12factor'
 end

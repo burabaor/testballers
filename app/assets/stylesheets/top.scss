@@ -1,37 +1,28 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-/*!
- * IE10 viewport hack for Surface/desktop Windows 8 bug
- * Copyright 2014-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-/*
- * See the Getting Started docs for more information:
- * http://getbootstrap.com/getting-started/#support-ie10-width
- */
 @-ms-viewport     { width: device-width; }
 @-o-viewport      { width: device-width; }
 @viewport         { width: device-width; }
 
+@import "./mixin/*";
 
 #jumbotron-ext {
-  margin-bottom: 0px;
+  @include default();
   background: url("3693058077_38c5b8f0a9_o.jpg");
   background-size: 100% 100%;
   background-color: rgba(0,0,0,0.6);
   height: 335px;
 
   @media (min-width: 992px ) {
-    height: 360px;
+    height: 388px;
   }
   @media (max-width: 767px) {
     height: 515px;
     padding: 30px 0;
   }
+}
+
+.top-contents-wrapper {
+  background-color: #fafafa;
+  padding-top: 50px;
 }
 
 #search-ext {
@@ -51,7 +42,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 }
 .footer {
   position: absolute;
@@ -69,18 +60,41 @@ body {
 /* Not required for template or sticky footer method. */
 
 
+.scroll-x {
+  overflow-x: scroll;
+}
 
 .thumbnail-ext {
   border: none;
+  background-color: #f1f1f1;
+
+  img {
+    height: 200px !important;
+    width: 300px;
+  }
 }
 .caption-ext {
-  width: 284px;
   @media (max-width: 354px ) {
     width: auto;
   }
   margin: 0 auto;
   padding: 0 !important;
+  &__title {
+    height: 38px;
+  }
+  &__contributor {
+    -webkit-font-smoothing: antialiased;
+  }
 }
+
+.description-ext {
+  height: 100px;
+  overflow: scroll;
+  border-top: solid 2px #999;
+  padding-top: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
 .my-container {
   margin: 0 20px;
 }
@@ -117,8 +131,13 @@ body {
   color: white;
   font-size: 2em;
   @media (min-width: 992px) {
-    font-size: 3em;
+    font-size: 3.5em;
   }
+}
+#head-caption {
+  color: white;
+  margin: 0px 0px 48px;
+  font-size: 1.2em;
 }
 
 .head-form {

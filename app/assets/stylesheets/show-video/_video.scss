@@ -1,0 +1,44 @@
+.screen-wrapper {
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.video {
+  height: 100vh;
+  &__player {
+    height: 60vh;
+    video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__note {
+    color: #333;
+    &__info {
+    }
+    margin-left: 10px;
+    &__add-comment {
+      border-top: solid 1px #636363;
+      margin-top: 10px;
+      button {
+        float: left;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.comment-list {
+  padding-top: 20px;
+  background-color: #fff;
+  height: 100vh;
+  .comment {
+    &__text {
+      color: black;
+    }
+    &__name {
+      color: #999;
+      display: inline-block;
+    }
+  }
+}

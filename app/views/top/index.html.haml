@@ -3,11 +3,13 @@
 
 / head-jumbotron
 #jumbotron-ext.jumbotron
-  .container
-    #head-message.margin-b-lg
-      Let's learn
+  .container.smooth
+    %h1#head-message
+      Knowledge Market
+    %p#head-caption
+      サッカーを見つめ直し、サッカーに活かす。
       %br
-      with high quality seminar
+      新しい発見との出会いの場。
     / 新規登録
     .row.margin-none
       / 直接新規登録
@@ -15,7 +17,7 @@
         = devise_error_messages!
         .form-group
           %label.sr-only{for: "exampleInputName3"} 名前
-          = f.text_field :name, class:"form-control head-form", placeholder:"名前", autofocus: true
+          = f.text_field :name, class:"form-control head-form", placeholder:"名前"
         .form-group
           %label.sr-only{for: "exampleInputEmail3"} メールアドレス
           = f.email_field :email, class:"form-control head-form", placeholder:"メールアドレス", autofocus: true
@@ -31,18 +33,30 @@
       = link_to "Facebookで登録", user_facebook_omniauth_authorize_path, class: "btn btn-fb smooth"
       = link_to "Twitterで登録", user_twitter_omniauth_authorize_path, class: "btn btn-tw smooth"
 
-/ search list
-= render partial: "common/search_list"
-/ video list
-= render partial: "common/popular_videos"
+.top-contents-wrapper
+  / video list
+  .container
+    .row
+      .col-md-9
+        .panel
+          .panel-body
+            %h3.list-name 人気の動画
+            .row
+              = render partial: "common/category_videos", collection: @videos.limit(3), as: "video"
+        - @categories.each do |category|
+          - if category.videos.present?
+            .panel
+              .panel-body
+                %h3.list-name #{ category.name }
+                .row
+                  = render partial: "common/category_videos", collection: category.videos, as: "video"
+      .col-md-3
+        = render partial: "sidebar"
+
 
 / message-jumbotron
 #message.jumbotron
   .container
     %p#message-text
-      あなたの少しの成長が
-      %br
-      日本サッカーを強くする。
-      %br
-      W杯で優勝する日本代表へ
+      W杯、そろそろ優勝。
       %br

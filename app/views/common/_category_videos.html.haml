@@ -1,0 +1,13 @@
+.col-sm-6.col-md-4
+  .thumbnail.thumbnail-ext
+    = link_to video_path(video.id) do
+      %img{ alt: "...", src: video.image }
+    .caption.caption-ext
+      %h4.caption-ext__title #{ video.title }
+      %i.fa.fa-star
+      %i.fa.fa-star
+      %i.fa.fa-star
+      %i.fa.fa-star-half-o
+      %i.fa.fa-star-o
+      .caption-ext__contributor #{ video.user.name }
+      .description-ext #{ format_only_br(video.description) }

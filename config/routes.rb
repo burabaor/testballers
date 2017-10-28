@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   resources :point, only: [:new]
-  resources :videos, only: [:new, :create]
+  resources :videos, only: [:new, :show, :create]
   resources :trades, only: [:create]
   post 'point/pay' => 'point#pay'
   root 'top#index'

@@ -1,0 +1,218 @@
+.nav.panel-group.sidebar
+  .panel.panel-default
+    .panel-heading
+      %h5.panel-title 自由検索
+    %ul.list-group
+      %li.list-group-item
+        %input.form-control{ placeholder: "キーワード", type: "text" }
+  .panel.panel-default
+    .panel-heading
+      %h5.panel-title 問題意識
+    %ul.list-group
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__player" do
+          選手について
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__issue__player
+          %ul.list-group
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__physical" do
+                フィジカル能力
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__physical
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "基本的な運動能力が低い", "#"
+                    %li.list-group-item= link_to "後半になると走れない（持久力が低い）", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__ball" do
+                ボールを扱う技術
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__ball
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "トラップ", "#"
+                    %li.list-group-item= link_to "蹴る", "#"
+                    %li.list-group-item= link_to "ボールキープ", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__team-mental" do
+                チーム・メンタル
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__team-mental
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "モチベーションが低い", "#"
+                    %li.list-group-item= link_to "オン・オフの切り替えが遅い", "#"
+                    %li.list-group-item= link_to "選手同士の仲が良くない", "#"
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__coach" do
+          指導能力について
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__issue__coach
+          %ul.list-group
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__coach__physical" do
+                フィジカル
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__coach__physical
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "基本的な運動能力が低い", "#"
+                    %li.list-group-item= link_to "後半になると走れない（持久力が低い）", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__coach__defense" do
+                ボールが取れない
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__coach__defense
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "前プレがはまらない", "#"
+                    %li.list-group-item= link_to "ディフェンスラインがバラバラ", "#"
+                    %li.list-group-item= link_to "ゾーン・ディフェンス", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__coach__point" do
+                点が入らない
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__coach__point
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "良い状況でボールが取れない", "#"
+                    %li.list-group-item= link_to "自陣内でのビルドアップができない", "#"
+                    %li.list-group-item= link_to "相手陣内手前での崩しが上手く行かない", "#"
+                    %li.list-group-item= link_to "ゴール付近での崩しが上手く行かない", "#"
+                    %li.list-group-item= link_to "シュートが入らない", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__issue__coach__others" do
+                その他
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__issue__coach__others
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "効果的なコミュニケーションが取れない", "#"
+                    %li.list-group-item= link_to "応急処置を自信を持ってできない", "#"
+
+  .panel.panel-default
+    .panel-heading
+      %h5.panel-title カテゴリー検索
+    / フィジカル
+    %ul.list-group
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__physical" do
+          フィジカル
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__physical
+          %ul.list-group
+            %li.list-group-item= link_to "コーディネーション能力（基礎運動能力）", "#"
+            %li.list-group-item= link_to "トレーニング計画", "#"
+            %li.list-group-item= link_to "ウォーミングアップ", "#"
+            %li.list-group-item= link_to "瞬発力・一瞬の筋出力", "#"
+            %li.list-group-item= link_to "持久力", "#"
+            %li.list-group-item= link_to "ピリオダイゼーション", "#"
+            %li.list-group-item= link_to "身体をゆるめる", "#"
+            %li.list-group-item= link_to "年代別トレーニング理論", "#"
+
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__collective" do
+          集団戦術
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__collective
+          %ul.list-group
+            %li.list-group-item= link_to "戦術についての基本的な考え方", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__collective__offense" do
+                オフェンス
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__collective__offense
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "基本的な考え方", "#"
+                    %li.list-group-item= link_to "ポゼッション力を上げる", "#"
+                    %li.list-group-item= link_to "ゴール前での崩し", "#"
+                    %li.list-group-item= link_to "サイドからの崩し", "#"
+                    %li.list-group-item= link_to "ボール奪取からの速攻", "#"
+                    %li.list-group-item= link_to "3人以上の連動", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__collective__defense" do
+                ディフェンス
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__collective__defense
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "プレッシング", "#"
+                    %li.list-group-item= link_to "ゾーン・ディフェンス", "#"
+                    %li.list-group-item= link_to "ラインコントロール", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__collective__others" do
+                その他
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__collective__others
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "格上相手の戦略", "#"
+                    %li.list-group-item= link_to "対戦相手の分析", "#"
+                    %li.list-group-item= link_to "フットサル", "#"
+
+      / 個人戦術
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__indivisual" do
+          個人戦術
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__indivisual
+          %ul.list-group
+            %li.list-group-item= link_to "ボールコントロール", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__indivisual__kick" do
+                蹴る
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__indivisual__kick
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "パス", "#"
+                    %li.list-group-item= link_to "シュート", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__indivisual__strategy" do
+                駆け引き
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__indivisual__strategy
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "ボール保持時", "#"
+                    %li.list-group-item= link_to "トラップ時", "#"
+                    %li.list-group-item= link_to "ディフェンス時", "#"
+            %li.list-group-item
+              = link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__indivisual__others" do
+                その他
+                %span.caret
+                .panel-collapse.collapse.sidebar__list#list__indivisual__others
+                  %ul.list-group{ style: "list-style-type:none;" }
+                    %li.list-group-item= link_to "視野を広く保つ", "#"
+                    %li.list-group-item= link_to "フットサル", "#"
+
+      / チーム・メンタル
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__team-mental" do
+          チーム・メンタル
+          %span.caret
+
+      / その他
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__others" do
+          その他
+          %span.caret
+
+
+        .panel-collapse.collapse.sidebar__list#list__physical
+          .panel-body
+            %ul.list-group
+              %li.list-group-item= link_to "コーディネーション能力（基礎運動能力）", "#"
+
+  .panel.panel-default
+    .panel-heading
+      %h5.panel-title インスピレーション動画
+    %ul.list-group
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__inspiration__collective" do
+          集団
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__inspiration__collective
+          %ul.list-group
+            %li.list-group-item= link_to "オフェンス", "#"
+            %li.list-group-item= link_to "ディフェンス", "#"
+            %li.list-group-item= link_to "切り替え", "#"
+      %li.list-group-item
+        =link_to "#", class: "sidebar__toggle", "data-toggle": "collapse", href: "#list__inspiration__indivisual" do
+          個人
+          %span.caret
+        .panel-collapse.collapse.sidebar__list#list__inspiration__indivisual
+          %ul.list-group
+            %li.list-group-item= link_to "オフェンス", "#"
+            %li.list-group-item= link_to "ディフェンス", "#"
+            %li.list-group-item= link_to "切り替え", "#"

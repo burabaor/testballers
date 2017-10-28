@@ -1,2 +1,14 @@
+/ 検索リスト
 = render partial: "common/search_list"
-= render partial: "common/popular_videos"
+
+/ 動画
+.container
+  .panel
+    .panel-body
+      %h3.list-name マイ動画
+      = render partial: "common/popular_videos", locals: {videos: current_user.videos}
+  .panel
+    .panel-body
+      %h3.list-name 人気の動画
+      = render partial: "common/popular_videos"
+

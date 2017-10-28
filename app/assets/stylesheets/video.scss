@@ -1,0 +1,33 @@
+@import "./mixin/*";
+
+.post-wrapper {
+  @include default();
+}
+
+#video-new-jmbt {
+  margin-top: 50px;
+  &__h1 {
+    font-size: 3em;
+  }
+  &__p {
+    font-size: 1.1em;
+  }
+}
+
+#video-form {
+  &__row {
+    margin-left: 0px;
+  }
+  &__label {
+    padding-top: 7px;
+  }
+  &__categories {
+    padding-top: 3px;
+    &__wrapper {
+      display: inline-block;
+    }
+    &__input {
+      margin: 0px 2px 0px 5px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.jumbotron#video-new-jmbt
+  .container
+    .h1#video-new-jmbt__h1 動画の投稿
+    %p#video-new-jmbt__p.text-muted.smooth
+      以下の情報を入力し、動画をアップロードしましょう！
+      %br
+      画面の向こうには、あなたの投稿を待ち望む指導者がいます。
+= form_for @video, html: {class: "form-horizontal"} do |f|
+  .container
+    .row#video-form__row
+      .form-group
+        %label.col-md-2#video-form__label{ for: "video_title" } タイトル
+        .col-md-6
+          = f.text_field :title, class: "form-control"
+      .form-group
+        %label.col-md-2#video-form__label{ for: "video_image"} 紹介画像
+        .col-md-6
+          = f.text_field :image, class: "form-control"
+      .form-group
+        %label.col-md-2#video-form__label{ for: "video_file"} 動画ファイル
+        .col-md-6
+          = f.file_field :file
+      .form-group
+        %label.col-md-2#video-form__label{ for: "video-form__categories"} カテゴリー
+        .col-md-5#video-form__categories
+          = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b|
+            #video-form__categories__wrapper
+              = b.label(class: "form-check-label") { b.check_box(id: "video-form__categories__input") + b.text }
+      .form-group
+        %label.col-md-2#video-form__label{ for: "video_description"} 動画の説明
+        .col-md-6
+          = f.text_area :description, class: "form-control"
+      .form-group
+        %label.col-md-2#video-form__label{ for: "video_passcoad" } パスコード
+        .col-md-6
+          = f.text_field :passcoad, class: "form-control"
+      .form-group
+        .col-md-offset-2.col-md-6
+          = f.submit "投稿する", class: "btn btn-primary"
