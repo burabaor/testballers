@@ -65,4 +65,5 @@ gem "haml-rails", "~> 0.9"
 gem "font-awesome-rails"
 group :production, :staging do
   gem 'rails_12factor'
+  gem 'json', github: 'flori/json', branch: 'v1.8'
 end
