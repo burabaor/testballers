@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 20171004035502) do
     t.datetime "updated_at",                     null: false
   end
 
-  create_table "evaluations", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4,     null: false
-    t.integer  "video_id",   limit: 4,     null: false
-    t.integer  "evaluation", limit: 8,     null: false
-    t.text     "comment",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "purchases", force: :cascade do |t|
     t.integer  "user_id",    limit: 4, null: false
     t.integer  "video_id",   limit: 4, null: false
