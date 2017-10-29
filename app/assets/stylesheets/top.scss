@@ -6,7 +6,7 @@
 
 #jumbotron-ext {
   @include default();
-  background: url("3693058077_38c5b8f0a9_o.jpg");
+  background-image: image-url("3693058077_38c5b8f0a9_o.jpg");
   background-size: 100% 100%;
   background-color: rgba(0,0,0,0.6);
   height: 335px;
@@ -109,7 +109,7 @@ body {
 }
 
 #message {
-  background: url("enjin~4.jpeg");
+  background-image: image-url("enjin~4.jpeg");
   background-size: 100% 100%;
   height: 400px;
   @media (max-width: 767px) {
