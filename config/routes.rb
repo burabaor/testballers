@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :users, only: [:index]
+  get  "/users", to: "top#index"
   resources :point, only: [:new]
   resources :videos, only: [:new, :show, :create]
   resources :trades, only: [:create]
