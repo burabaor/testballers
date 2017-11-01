@@ -74,3 +74,5 @@ gem 'jquery-turbolinks'
 gem "haml-rails", "~> 0.9"
 gem "font-awesome-rails"
 gem 'fog'
+gem 'exception_notification'
+gem 'slack-notifier'
